@@ -1,0 +1,3 @@
+DIR = /var/log/backup
+REGEX = *.gz
+TIME = 90

@@ -1,0 +1,14 @@
+## named.custom - custom configuration for bind
+#
+# Any changes not currently supported by redhat-config-bind should be put 
+# in this file.
+#
+
+zone  "." { 
+	type hint; 
+	file  "named.ca";
+};
+
+options {
+        directory "/var/named/";
+	forward only;

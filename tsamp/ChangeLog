@@ -1,0 +1,10 @@
+2013-07-17  Jose Angel de Bustos Perez  <jadebustos@icarus.laptop>
+
+	* Changelog: Version 0.99999
+
+	  Added ChangeLog file
+	
+	  app2tsam-install.sh and app2tsam-config-rsrc.sh
+		Email developer updated to <jadebustos@gmail.com>.:
+		Added information about script version and md5sum of the script to logs files.
+

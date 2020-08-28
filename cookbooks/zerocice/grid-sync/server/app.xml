@@ -1,0 +1,33 @@
+<icegrid>
+    <application name="SyncGridApp" import-default-templates="true">
+
+        <replica-group id="grid">
+            <load-balancing type="round-robin" />
+            <object identity="SyncGridObj"/>
+        </replica-group>
+
+        <server-template id="SyncGridInstance">
+            <parameter name="ncpus" />
+            <server id="SyncGridServer-${node}" exe="python" activation="on-demand" pwd="${server.distrib}">
+                <option>HelloWorldServer.py</option>
+                <!-- Directive distrib to enable icepatch2 distribution in nodes -->
+                <distrib/>
+                <properties>
+                   <property name="LogLevel" value="DEBUG" />
+                </properties>
+                <adapter name="SyncGridAdp" register-process="true" endpoints="tcp" replica-group="grid" />
+            </server>
+        </server-template>
+
+        <node name="slave1">
+            <!-- set IcePatch2Server port for use with icepatch2client for testing, and listen on all interfaces -->
+            <server-instance template="IcePatch2" endpoints="tcp -p 10002" directory="/opt/distrib/grid-sync"/>
+            <server-instance template="SyncGridInstance" ncpus="2"/>
+        </node>
+
+        <node name="slave2">
+            <server-instance template="SyncGridInstance" ncpus="2"/>
+        </node>
+
+    </application>
+</icegrid>

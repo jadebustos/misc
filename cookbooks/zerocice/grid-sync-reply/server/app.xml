@@ -1,0 +1,33 @@
+<icegrid>
+    <application name="SyncGridReplyApp" import-default-templates="true">
+
+        <replica-group id="grid-reply">
+            <load-balancing type="round-robin" />
+            <object identity="SyncGridReplyObj"/>
+        </replica-group>
+
+        <server-template id="SyncGridReplyInstance">
+            <parameter name="ncpus" />
+            <server id="SyncGridReplyServer-${node}" exe="python" activation="on-demand" pwd="${server.distrib}">
+                <option>HelloWorldServerReply.py</option>
+                <!-- Directive distrib to enable icepatch2 distribution in nodes -->
+                <distrib/>
+                <properties>
+                   <property name="LogLevel" value="DEBUG" />
+                </properties>
+                <adapter name="SyncGridReplyAdp" register-process="true" endpoints="tcp" replica-group="grid-reply" />
+            </server>
+        </server-template>
+
+        <node name="slave1">
+            <!-- set IcePatch2Server port for use with icepatch2client for testing, and listen on all interfaces -->
+            <server-instance template="IcePatch2" endpoints="tcp -p 10004" directory="/opt/distrib/grid-sync-reply"/>
+            <server-instance template="SyncGridReplyInstance" ncpus="2"/>
+        </node>
+
+        <node name="slave2">
+            <server-instance template="SyncGridReplyInstance" ncpus="2"/>
+        </node>
+
+    </application>
+</icegrid>

@@ -1,0 +1,84 @@
+{
+  "client":{
+    "controller": {
+      "group1": {
+        "start": "1",
+         "end": "3",
+         "network": "192.168.170.",
+         "ipv4start": "11",
+         "ipv4end": "13"
+      },
+      "group2": {
+        "start": "4",
+         "end": "6",
+         "network": "192.168.170.",
+         "ipv4start": "21",
+         "ipv4end": "23"
+      }
+    },
+    "backend": {
+      "group1": {
+        "start": "1",
+        "end": "3",
+        "network": "192.168.170.",
+        "ipv4start": "51",
+        "ipv4end": "53"
+      }
+    },
+    "haproxy": {
+      "group1": {
+        "start": "1",
+        "end": "3",
+        "network": "192.168.170.",
+        "ipv4start": "61",
+        "ipv4end": "63"
+      }
+    },
+    "ceph-admin": {
+      "group1": {
+        "start": "1",
+        "end": "1",
+        "network": "192.168.180.",
+        "ipv4start": "11",
+        "ipv4end": "11"
+      },
+      "group2": {
+        "start": "2",
+        "end": "2",
+        "network": "192.168.180.",
+        "ipv4start": "11",
+        "ipv4end": "11"
+      }
+    },
+    "az01-compute": {
+      "group1": {
+        "start": "1",
+        "end": "3",
+        "network": "192.168.190.",
+        "ipv4start": "11",
+        "ipv4end": "13"
+      }
+    },
+    "az02-compute": {
+      "group1": {
+        "start": "1",
+        "end": "3",
+        "network": "192.168.200.",
+        "ipv4start": "11",
+        "ipv4end": "13"
+      }
+    },
+    "vip": {
+      "group1": {
+        "start": "1",
+        "end": "6",
+        "network": "192.168.200.",
+        "ipv4start": "65",
+        "ipv4end": "70",
+        "fqdn": {
+          "70": "horizon.mylab.com"
+        }
+      }
+    }
+  }
+}

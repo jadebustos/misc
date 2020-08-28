@@ -1,0 +1,13 @@
+#!/bin/bash
+
+case "$1" in
+start)
+	(perl /root/dinamicDNS/dinamicDNS.pl &)
+	echo "Arrancando dinamicDNS: Hecho."
+	;;
+*)
+	echo $"Usage: $0 {start}"
+	exit 1
+esac
+
+exit $?

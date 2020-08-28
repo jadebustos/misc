@@ -1,0 +1,20 @@
+This script has been developed to automate whatever application you want to provide HA with TSAM.
+
+To this script is able to work properly are needed some requirements:
+
+* TSAM nodes installed and configured to be reachable by network and SSH.
+* DNS resolution.
+* Public key authentication between/among TSAM nodes with root users, including
+  the node where the script is executed that must be able to login itself via
+  ssh.
+* Application must be installed in all TSAM nodes.
+* Application must be able to start/stop/monitor in all TSAM nodes.
+* Application scripts must be TSAM compliance (return codes).
+* Application scripts/files paths must be the same across TSAM nodes.
+* Application data must be on LVM volume groups inside a disk partition.
+* Application filesystems must be unmouted in all TSAM nodes.
+* Application filesystems must have its mount points in /etc/fstab including noauto option.
+* Application must be stopped in all TSAM nodes.
+* Network interfaces are configured in a symmetric way across the nodes.
+
+This script has been designed to be application independent and may not fit your needs.

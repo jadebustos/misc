@@ -1,0 +1,14 @@
+2015-02-16  Jose Angel de Bustos Perez  <jadebustos@gmail.com>
+
+	* server/inotify.c (myinotify): Function to monitor a directory using inotify. Only creation is monitorized.
+
+2015-02-13  Jose Angel de Bustos Perez  <jadebustos@gmail.com>
+
+	* server/read-config.c (read_configuration): Function to read configuration from a file.
+
+2015-02-12  Jose Angel de Bustos Perez  <jadebustos@gmail.com>
+
+	* proc_args.c (processing_args): Function to process the command line arguments.
+
+	* mft-in.c: Daemon to monitor a directory and run a command on file creation.
+

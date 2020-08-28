@@ -1,0 +1,14 @@
+2013-12-03  José Ángel de Bustos Pérez  <jadebustos@gmail.com>
+
+	* document-modules.py: 
+
+	Added more information:
+	  - clases methods
+	  - classes functions
+	  - classes documentation (if available)
+	  - classes comments (if available)
+	  - functions documentation (if available)
+	  - functions comments (if available)
+	
+	HTML code redesigned.
+
