@@ -11,20 +11,20 @@ SOURCE_DIR=(
 TARGET_DIR=(
            '/media/work/Red Hat/jadebustos/')
 
+EXCLUDE_FILES=('/home/jadebustos/.stuff/mydata/jadebustos-excludes.txt'
+        )
+
 for index in ${!SOURCE_DIR[*]}
 do
   SOURCE=${SOURCE_DIR[$index]}
   TARGET=${TARGET_DIR[$index]}
+  EXCLUDE_FILE=${EXCLUDE_FILES[$index]}
   # check if target dir exists
   if [ ! -d "$TARGET" ]
   then
     mkdir -p $TARGET
   fi
-  CMD="rsync -aP --delete '$SOURCE' '$TARGET'"
+  CMD="rsync -aP --exclude-from '$EXCLUDE_FILE' --delete '$SOURCE' '$TARGET'"
   echo "Haciendo backup de $SOURCE a $TARGET"  
   eval $CMD
 done
-
-
-
-
