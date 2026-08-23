@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 # Copyright 2026 (c) José Ángel de Bustos Pérez 
-#   Author: José Ángel de Bustos Pérez <abustosp@redhat.com>
+#   Author: José Ángel de Bustos Pérez <jadebustos@gmail.com>
 #
 # This script is free software: you can redistribute it and/or modify it under the terms of 
 # the GNU General Public License v3 as published by the Free Software Foundation.
