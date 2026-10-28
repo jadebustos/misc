@@ -5,13 +5,14 @@
 #     Distributed under GNU GPL v2 License                    
 #     See COPYING.txt for more details
 
+USER='abustosp'
 SOURCE_DIR=(
-           '/home/jadebustos/')
+           '/home/'$USER'/')
 
 TARGET_DIR=(
-           '/media/work/Red Hat/jadebustos/')
+           '/media/work/Red Hat/'$USER'/')
 
-EXCLUDE_FILES=('/home/jadebustos/.stuff/mydata/jadebustos-excludes.txt'
+EXCLUDE_FILES=('/home/'$USER'/.stuff/mydata/jadebustos-excludes.txt'
         )
 
 for index in ${!SOURCE_DIR[*]}
